@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aditya Kaple | Portfolio (Mobile)</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@700;900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* Limit width a bit for large phones */
+    .page-wrapper {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ----------------------------------------------------- */
+    /* ---------------------- NAVBAR ------------------------ */
+    /* ----------------------------------------------------- */
+
+    nav {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 0.9rem 1.1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(12px);
+      background: rgba(0, 0, 0, 0.55);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      z-index: 50;
+    }
+
+    .nav-logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: #ffffff;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.1rem;
+      list-style: none;
+      font-size: 0.72rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #dcdcdc;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 0.1rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: #fff;
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:active::after,
+    .nav-links a:focus-visible::after {
+      width: 100%;
+    }
+
+    /* ----------------------------------------------------- */
+    /* ---------------------- HERO -------------------------- */
+    /* ----------------------------------------------------- */
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4.2rem 1.4rem 2.6rem;
+      overflow: hidden;
+    }
+
+    /* subtle particle canvas */
+    #hero-particles {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.35;
+    }
+
+    /* BIG BACK TEXT */
+    .hero-title {
+      position: absolute;
+      top: 12%;
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      font-family: "Titillium Web", system-ui, -apple-system, sans-serif;
+      font-size: clamp(2.3rem, 12vw, 3.1rem);
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      color: #d8d8d8;
+      white-space: nowrap;
+      opacity: 0;
+      z-index: 1;
+      text-transform: uppercase;
+      text-align: center;
+      transition: opacity 0.9s ease, transform 0.9s ease;
+      text-shadow: 0 8px 26px rgba(0, 0, 0, 0.9);
+    }
+
+    .hero-title.visible {
+      opacity: 0.95;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.8rem;
+      margin-top: 6rem;
+    }
+
+    .hero-center {
+      display: flex;
+      justify-content: center;
+      order: 1;
+    }
+
+    .hero-face {
+      width: min(260px, 80vw);
+      height: auto;
+      filter: drop-shadow(0 22px 50px rgba(0, 0, 0, 0.9));
+      animation: heroFloat 7s ease-in-out infinite;
+    }
+
+    @keyframes heroFloat {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-10px); }
+    }
+
+    .hero-left {
+      order: 2;
+      text-align: center;
+      color: #f1f1f1;
+    }
+
+    .hero-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #b5b5b5;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-role {
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin: 0.18rem 0;
+      position: relative;
+      padding-left: 0.9rem;
+      display: inline-block;
+    }
+
+    .hero-role::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-50%);
+    }
+
+    .hero-right {
+      order: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+      font-size: 0.86rem;
+      margin-top: 0.4rem;
+    }
+
+    .linkedin-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0.9rem 2.4rem;
+      border-radius: 999px;
+      background: #0077ff;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      box-shadow: 0 13px 35px rgba(0, 119, 255, 0.5);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .linkedin-btn:active {
+      transform: translateY(1px) scale(0.99);
+      box-shadow: 0 8px 24px rgba(0, 119, 255, 0.6);
+    }
+
+    .contact-block {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-align: left;
+      font-size: 0.8rem;
+      color: #d7d7e1;
+    }
+
+    .arrow-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #fff;
+      color: #000;
+      font-size: 1.1rem;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.25);
+    }
+
+    /* ----------------------------------------------------- */
+    /* ---------------------- ABOUT ------------------------- */
+    /* ----------------------------------------------------- */
+
+    .section {
+      padding: 3.2rem 1.4rem 2.8rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      background: #000;
+    }
+
+    .about-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .about-photo-wrapper {
+      position: relative;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .about-photo-wrapper::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 0%, #ffffff1a, #0077ff33, transparent 70%);
+      filter: blur(8px);
+      z-index: 0;
+    }
+
+    .about-photo {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.95);
+      filter: saturate(1.05);
+      animation: aboutFloat 7s ease-in-out infinite;
+    }
+
+    @keyframes aboutFloat {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-8px); }
+    }
+
+    .about-name {
+      margin-top: 0.7rem;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: #9da3b4;
+    }
+
+    .about-card {
+      width: 100%;
+      background: radial-gradient(circle at top left, #151515, #050505 60%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 22px;
+      padding: 1.7rem 1.5rem;
+      box-shadow: 0 24px 65px rgba(0, 0, 0, 0.96);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* subtle code symbols */
+    .about-card::before,
+    .about-card::after {
+      position: absolute;
+      font-family: "Titillium Web", system-ui, -apple-system, sans-serif;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.03);
+      pointer-events: none;
+    }
+
+    .about-card::before {
+      content: "{}";
+      top: 6%;
+      left: 6%;
+      font-size: 2.7rem;
+    }
+
+    .about-card::after {
+      content: "();";
+      bottom: 5%;
+      right: 8%;
+      font-size: 2.4rem;
+      opacity: 0.05;
+    }
+
+    .about-ai-badge {
+      position: absolute;
+      top: 10%;
+      right: 10%;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 1px dashed rgba(255, 255, 255, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: rgba(255, 255, 255, 0.6);
+      background: radial-gradient(circle, rgba(0, 119, 255, 0.2), transparent 70%);
+    }
+
+    .about-tagline {
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-size: 0.68rem;
+      color: #9da3b4;
+      margin-bottom: 0.6rem;
+    }
+
+    .about-heading {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+    }
+
+    .about-sub {
+      font-size: 0.86rem;
+      color: #c4c7d0;
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+
+    .about-body {
+      font-size: 0.85rem;
+      line-height: 1.8;
+      color: #e4e6f0;
+      margin-bottom: 0.9rem;
+    }
+
+    .about-highlight-list {
+      list-style: none;
+      font-size: 0.83rem;
+      color: #d4d7e2;
+      display: grid;
+      gap: 0.4rem 1.2rem;
+      margin-top: 0.4rem;
+    }
+
+    .about-highlight-list li::before {
+      content: "• ";
+      color: #0077ff;
+    }
+
+    /* ----------------------------------------------------- */
+    /* ---------------------- SKILLS ------------------------ */
+    /* ----------------------------------------------------- */
+
+    .skills-inner {
+      background: radial-gradient(circle at top left, #151515, #050505 60%);
+      border-radius: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1.8rem 1.5rem 1.7rem;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.95);
+    }
+
+    .skills-tagline {
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      font-size: 0.68rem;
+      color: #9da3b4;
+      margin-bottom: 0.6rem;
+    }
+
+    .skills-heading {
+      font-size: 1.3rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .skills-note {
+      font-size: 0.84rem;
+      color: #c4c7d0;
+      margin-bottom: 1.2rem;
+      line-height: 1.7;
+    }
+
+    .skills-groups {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .skill-group {
+      border-radius: 16px;
+      padding: 0.8rem 0.85rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.9);
+    }
+
+    .skill-group-title {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #9ea3b5;
+      margin-bottom: 0.25rem;
+    }
+
+    .skill-group-main {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .skill-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .skill-pill {
+      font-size: 0.75rem;
+      padding: 0.28rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      background: rgba(8, 8, 8, 0.85);
+      color: #e5e7f2;
+      backdrop-filter: blur(10px);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .skill-pill::before {
+      content: "";
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: rgba(0, 119, 255, 0.8);
+      box-shadow: 0 0 8px rgba(0, 119, 255, 0.8);
+    }
+
+    .skills-subgrid {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .skills-subcard {
+      border-radius: 16px;
+      padding: 0.8rem 0.9rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px dashed rgba(255, 255, 255, 0.08);
+      font-size: 0.8rem;
+      color: #d5d8e5;
+      line-height: 1.6;
+    }
+
+    .skills-subcard strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-size: 0.76rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #8ea2ff;
+    }
+
+    /* ----------------------------------------------------- */
+    /* ---------------------- PROJECTS ---------------------- */
+    /* ----------------------------------------------------- */
+
+    .projects-inner {
+      background: radial-gradient(circle at top left, #141414, #050505 65%);
+      border-radius: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1.8rem 1.5rem 1.8rem;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.96);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .projects-inner::before,
+    .projects-inner::after {
+      position: absolute;
+      font-family: "Titillium Web", system-ui, -apple-system, sans-serif;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.03);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .projects-inner::before {
+      content: "</>";
+      top: 8%;
+      right: 6%;
+      font-size: 2.4rem;
+    }
+
+    .projects-inner::after {
+      content: ";";
+      bottom: 4%;
+      left: 10%;
+      font-size: 2.8rem;
+      opacity: 0.04;
+    }
+
+    .projects-tagline {
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      font-size: 0.68rem;
+      color: #9da3b4;
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .projects-heading {
+      font-size: 1.3rem;
+      margin-bottom: 0.6rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .projects-sub {
+      font-size: 0.84rem;
+      color: #c4c7d0;
+      margin-bottom: 1.4rem;
+      max-width: 100%;
+      position: relative;
+      z-index: 1;
+      line-height: 1.7;
+    }
+
+    .projects-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-card {
+      position: relative;
+      border-radius: 18px;
+      padding: 1.1rem 1.1rem 1rem;
+      background: rgba(8, 8, 10, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: 0 18px 55px rgba(0, 0, 0, 0.95);
+      overflow: hidden;
+    }
+
+    .project-top-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #b0b4c2;
+    }
+
+    .project-tag-pill {
+      padding: 0.22rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(18, 20, 26, 0.9);
+    }
+
+    .project-title {
+      font-size: 1.02rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .project-desc {
+      font-size: 0.84rem;
+      color: #d2d4df;
+      margin-bottom: 0.6rem;
+      line-height: 1.6;
+    }
+
+    .project-bullets {
+      list-style: none;
+      font-size: 0.8rem;
+      color: #c4c7d5;
+      margin-bottom: 0.8rem;
+    }
+
+    .project-bullets li {
+      margin-bottom: 0.3rem;
+      position: relative;
+      padding-left: 0.85rem;
+    }
+
+    .project-bullets li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #5a8fff;
+    }
+
+    .project-tags-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .project-tag {
+      font-size: 0.72rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(18, 18, 24, 0.95);
+      color: #e0e4ff;
+    }
+
+    .project-footer {
+      margin-top: 0.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      align-items: flex-start;
+    }
+
+    .project-meta-note {
+      font-size: 0.72rem;
+      color: #9ca0b3;
+    }
+
+    .project-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #0d5bff, #3b8dff);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 12px 32px rgba(0, 102, 255, 0.7);
+      width: 100%;
+      text-align: center;
+    }
+
+    /* AI/ML timeline */
+    .project-timeline {
+      margin-top: 0.8rem;
+      padding-top: 0.6rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.76rem;
+      color: #c4c8da;
+    }
+
+    .timeline-track {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .timeline-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(0, 119, 255, 0.9);
+      box-shadow: 0 0 10px rgba(0, 119, 255, 0.9);
+    }
+
+    .timeline-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #8ea2ff;
+    }
+
+    .timeline-arrow {
+      font-size: 0.78rem;
+      opacity: 0.7;
+    }
+
+    /* ----------------------------------------------------- */
+    /* ---------------------- CONTACT ----------------------- */
+    /* ----------------------------------------------------- */
+
+    .contact-inner {
+      max-width: 100%;
+      padding: 1.8rem 1.5rem 1.9rem;
+      border-radius: 22px;
+      background: radial-gradient(circle at top left, #151515, #050505 65%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.96);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-tagline {
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      font-size: 0.68rem;
+      color: #9da3b4;
+      margin-bottom: 0.6rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-heading {
+      font-size: 1.3rem;
+      margin-bottom: 0.6rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-sub {
+      font-size: 0.84rem;
+      color: #c4c7d0;
+      margin-bottom: 1.2rem;
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-focus-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(10, 10, 16, 0.9);
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #b7bcd0;
+      margin-bottom: 1.4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-focus-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(0, 204, 102, 0.95);
+      box-shadow: 0 0 10px rgba(0, 204, 102, 0.95);
+    }
+
+    .contact-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-left-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #9ea3b5;
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-line {
+      font-size: 0.84rem;
+      color: #dde0ef;
+      line-height: 1.7;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      margin-top: 0.7rem;
+    }
+
+    .btn-primary,
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.84rem;
+      padding: 0.72rem 1.3rem;
+      width: 100%;
+    }
+
+    .btn-primary {
+      border: none;
+      background: linear-gradient(135deg, #0d5bff, #3b8dff);
+      color: #fff;
+      font-weight: 600;
+      box-shadow: 0 15px 38px rgba(0, 102, 255, 0.7);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      background: rgba(10, 10, 18, 0.92);
+      color: #e5e7f5;
+      font-weight: 500;
+    }
+
+    .btn-icon {
+      margin-right: 0.4rem;
+      font-size: 1rem;
+    }
+
+    .contact-card {
+      border-radius: 16px;
+      padding: 0.9rem 1rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.8rem;
+      color: #d5d8e5;
+      line-height: 1.7;
+    }
+
+    .contact-card strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-size: 0.76rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #8ea2ff;
+    }
+
+    /* ----------------------------------------------------- */
+    /* ---------------------- FOOTER ------------------------ */
+    /* ----------------------------------------------------- */
+
+    footer {
+      padding: 1.4rem 1.4rem 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      text-align: center;
+      font-size: 0.76rem;
+      color: #a6aab8;
+      background: #000;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <!-- NAVBAR -->
+    <nav>
+      <div class="nav-logo">AK</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Anchor for Home -->
+    <div id="home"></div>
+
+    <!-- HERO -->
+    <main class="hero">
+      <canvas id="hero-particles"></canvas>
+
+      <h1 class="hero-title">HI, I'M ADITYA</h1>
+
+      <section class="hero-content">
+        <div class="hero-center">
+          <img src="hero-face.png" alt="3D avatar of Aditya" class="hero-face" />
+        </div>
+
+        <div class="hero-left">
+          <p class="hero-label">IT DIPLOMA STUDENT</p>
+          <p class="hero-role">JAVA DEVELOPER</p>
+          <p class="hero-role">PYTHON PROGRAMMER</p>
+          <p class="hero-role">AI / ML ENTHUSIAST</p>
+        </div>
+
+        <div class="hero-right">
+          <a
+            href="https://www.linkedin.com/in/adityakaple07"
+            target="_blank"
+            class="linkedin-btn"
+          >
+            See LinkedIn Profile
+          </a>
+
+          <div class="contact-block">
+            <p>Want to talk about projects, internships, or tech?</p>
+            <a
+              href="mailto:adityakaple9@gmail.com?subject=Portfolio%20Contact&body=Hi%20Aditya%2C%0A"
+              class="arrow-btn"
+            >
+              &#8594;
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="about-inner">
+        <div class="about-photo-wrapper">
+          <img src="aditya.jpeg" alt="Aditya Kaple" class="about-photo" />
+          <p class="about-name">Aditya Kaple</p>
+        </div>
+
+        <div class="about-card">
+          <div class="about-ai-badge">AI / ML</div>
+
+          <p class="about-tagline">ABOUT · ADITYA</p>
+          <h2 class="about-heading">From concepts to real-world solutions.</h2>
+          <p class="about-sub">
+            Information Technology diploma student at Amrutvahini Polytechnic, Sangamner — focused on Java, Python, Cloud and AI/ML, with a strong discipline-first mindset.
+          </p>
+
+          <p class="about-body">
+            Aditya completed a 3-month internship at Innovatus Technologies, working with Java, SQL, Cloud technologies, Python, and Machine Learning. Known for his consistency and work ethic, he delivers on deadlines and helps teammates when they’re stuck.
+          </p>
+
+          <p class="about-body">
+            During this internship, he independently built six real-world projects across multiple domains: secure database systems, chatbots, note-sharing apps, and AI models. He also experiments with creative ideas like the <strong>Atlas Game</strong> built in Java Swing with a custom UI and SQL integration.
+          </p>
+
+          <ul class="about-highlight-list">
+            <li>Built DB Security System, College Chatbot &amp; Friends Notes System using AWS S3 &amp; RDS.</li>
+            <li>Developed AI/ML solutions: COVID-19 prediction with LSTM &amp; Face Expression Recognition using CNN.</li>
+            <li>Strong academic record — no KTs, consistently high pointers and disciplined performance.</li>
+            <li>Actively exploring software development, cloud engineering, and AI/ML with a focus on real impact.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="skills-inner">
+        <p class="skills-tagline">Skills · Stack</p>
+        <h2 class="skills-heading">Skills I’m actively working with.</h2>
+
+        <p class="skills-note">
+          I focus on writing clean, readable code and understanding core concepts properly,
+          rather than just collecting buzzwords.
+        </p>
+
+        <div class="skills-groups">
+          <div class="skill-group">
+            <div class="skill-group-title">Core Programming</div>
+            <div class="skill-group-main">Java · Python · DSA</div>
+            <div class="skill-pills-row">
+              <span class="skill-pill">Object-Oriented Programming</span>
+              <span class="skill-pill">Clean, readable code</span>
+              <span class="skill-pill">Problem solving</span>
+              <span class="skill-pill">Data structures &amp; algorithms</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-title">Data · AI / ML</div>
+            <div class="skill-group-main">AI / ML Fundamentals</div>
+            <div class="skill-pills-row">
+              <span class="skill-pill">Supervised &amp; basic ML models</span>
+              <span class="skill-pill">Working with datasets</span>
+              <span class="skill-pill">Neural network basics</span>
+              <span class="skill-pill">Experimenting &amp; iterating</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <div class="skill-group-title">Systems · Communication</div>
+            <div class="skill-group-main">Databases · Operating Systems · Communication Skills</div>
+            <div class="skill-pills-row">
+              <span class="skill-pill">Relational databases &amp; SQL basics</span>
+              <span class="skill-pill">Understanding OS fundamentals</span>
+              <span class="skill-pill">Explaining technical ideas clearly</span>
+              <span class="skill-pill">Team collaboration &amp; ownership</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-subgrid">
+          <div class="skills-subcard">
+            <strong>WHAT I ENJOY</strong>
+            Turning rough ideas into working prototypes, debugging tricky issues, polishing UIs,
+            and learning new concepts by actually shipping projects.
+          </div>
+          <div class="skills-subcard">
+            <strong>HOW I WORK</strong>
+            Break big tasks into steps, keep notes, ask focused questions, and always aim for
+            something simple to understand and maintain.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="projects-inner">
+        <p class="projects-tagline">Projects · Real Work</p>
+        <h2 class="projects-heading">Things I’ve built — and what’s coming next.</h2>
+        <p class="projects-sub">
+          I like building projects that feel like real products — with a clear user, clean structure,
+          and real-world tech like Java Swing, JDBC, and MySQL.
+        </p>
+
+        <div class="projects-grid">
+          <!-- Atlas Game -->
+          <article class="project-card">
+            <div class="project-top-row">
+              <span class="project-tag-pill">Desktop App</span>
+              <span class="project-tag-pill">Java Swing · MySQL · JDBC</span>
+            </div>
+
+            <h3 class="project-title">Atlas Word Learning Game</h3>
+            <p class="project-desc">
+              A standalone word-learning game for kids inspired by the classic “Atlas” game.
+              Two players take turns entering place names under a timer, helping kids build vocabulary,
+              focus and quick thinking — while the system tracks turns and validates inputs.
+            </p>
+
+            <ul class="project-bullets">
+              <li>Built entirely in Java Swing with a custom UI tailored for kids.</li>
+              <li>Uses MySQL + JDBC to store players, scores and game history reliably.</li>
+              <li>Turn-based flow, input validation and a countdown timer for each move.</li>
+            </ul>
+
+            <div class="project-tags-row">
+              <span class="project-tag">Java Swing UI</span>
+              <span class="project-tag">MySQL + JDBC</span>
+              <span class="project-tag">Kids learning</span>
+              <span class="project-tag">Game logic</span>
+            </div>
+
+            <div class="project-footer">
+              <p class="project-meta-note">
+                Standalone desktop app, fully coded and structured by me from scratch.
+              </p>
+              <a
+                href="https://drive.google.com/drive/folders/1fnCY_V50BKUHGkSjXRGRRCA0e6yzsuYl?usp=share_link"
+                target="_blank"
+                class="project-btn"
+              >
+                View / Discuss Project
+              </a>
+            </div>
+          </article>
+
+          <!-- AI/ML upcoming -->
+          <article class="project-card">
+            <div class="project-top-row">
+              <span class="project-tag-pill">Future</span>
+              <span class="project-tag-pill">AI / ML</span>
+            </div>
+
+            <h3 class="project-title">Upcoming: AI / ML based project</h3>
+            <p class="project-desc">
+              A focused AI/ML project where I’ll apply the concepts I’m learning — from
+              model training to evaluation — with a clear real-world use case.
+            </p>
+
+            <ul class="project-bullets">
+              <li>Will highlight my AI/ML learning journey.</li>
+              <li>Planned to be simple, useful and well-documented.</li>
+            </ul>
+
+            <div class="project-tags-row">
+              <span class="project-tag">AI / ML</span>
+              <span class="project-tag">Learning in public</span>
+            </div>
+
+            <div class="project-timeline">
+              <div class="timeline-track">
+                <div class="timeline-item">
+                  <span class="timeline-dot"></span>
+                  <span class="timeline-label">Now</span>
+                  <span class="timeline-arrow">→</span>
+                  <span class="timeline-text">Learning &amp; experimenting</span>
+                </div>
+                <div class="timeline-item">
+                  <span class="timeline-dot"></span>
+                  <span class="timeline-label">Next</span>
+                  <span class="timeline-arrow">→</span>
+                  <span class="timeline-text">Choose a real use case</span>
+                </div>
+                <div class="timeline-item">
+                  <span class="timeline-dot"></span>
+                  <span class="timeline-label">Later</span>
+                  <span class="timeline-arrow">→</span>
+                  <span class="timeline-text">Ship &amp; document the project</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="contact-inner">
+        <p class="contact-tagline">Let’s Connect</p>
+        <h2 class="contact-heading">Want to discuss an idea, project or opportunity?</h2>
+        <p class="contact-sub">
+          Whether it’s a Java tool, a small AI/ML experiment, or just a quick chat about tech and career,
+          I’m always happy to connect and learn from people in the industry.
+        </p>
+
+        <div class="contact-focus-pill">
+          <span class="contact-focus-dot"></span>
+          <span>Open to · Internships · Java · Python · Databases · AI/ML</span>
+        </div>
+
+        <div class="contact-grid">
+          <div>
+            <p class="contact-left-label">Primary</p>
+            <p class="contact-line">
+              The best way to reach me is through email or LinkedIn. I try to keep replies clear, honest and on point —
+              especially when it comes to timelines and expectations.
+            </p>
+
+            <div class="contact-actions">
+              <a
+                href="mailto:adityakaple9@gmail.com?subject=Portfolio%20Contact&body=Hi%20Aditya%2C%0A"
+                class="btn-primary"
+              >
+                <span class="btn-icon">✉</span>
+                Email Aditya
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/adityakaple07"
+                target="_blank"
+                class="btn-outline"
+              >
+                <span class="btn-icon">in</span>
+                Visit LinkedIn Profile
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <strong>WHAT I’M EXCITED ABOUT</strong>
+            Java + databases, practical AI/ML use cases, and building small tools that actually help people —
+            not just projects that stay in a folder.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      Made by Aditya Kaple using HTML, CSS, JS
+    </footer>
+  </div>
+
+  <script>
+    /* Show hero title on load */
+    window.addEventListener("load", () => {
+      const title = document.querySelector(".hero-title");
+      if (title) title.classList.add("visible");
+    });
+
+    /* Subtle background particles behind hero */
+    const canvas = document.getElementById("hero-particles");
+    if (canvas) {
+      const ctx = canvas.getContext("2d");
+      let particles = [];
+      const particleCount = 28;
+
+      function resizeCanvas() {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+      }
+
+      window.addEventListener("resize", resizeCanvas);
+      resizeCanvas();
+
+      function initParticles() {
+        particles = [];
+        for (let i = 0; i < particleCount; i++) {
+          particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            r: 0.8 + Math.random() * 1.3,
+            speedX: (Math.random() - 0.5) * 0.15,
+            speedY: (Math.random() - 0.5) * 0.15,
+            alpha: 0.18 + Math.random() * 0.25
+          });
+        }
+      }
+
+      function drawParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let p of particles) {
+          p.x += p.speedX;
+          p.y += p.speedY;
+
+          if (p.x < 0) p.x = canvas.width;
+          if (p.x > canvas.width) p.x = 0;
+          if (p.y < 0) p.y = canvas.height;
+          if (p.y > canvas.height) p.y = 0;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255,255,255,${p.alpha})`;
+          ctx.fill();
+        }
+        requestAnimationFrame(drawParticles);
+      }
+
+      initParticles();
+      drawParticles();
+    }
+  </script>
+</body>
+</html>
