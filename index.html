@@ -217,12 +217,12 @@
 
     .hero-center {
       flex: 1;
-      display: flex;
-      justify-content: center;
-      position: relative;
-      top: -500x;          /* moves face up so hair overlaps text */
-      transform: translateX(8%);
-      perspective: 1200px;  /* for 3D tilt */
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -240px;          /* moves face up so hair overlaps text like desktop */
+  transform: translateX(8%);
+  perspective: 1200px;  /* for 3D tilt */
     }
 
     .hero-face {
@@ -1238,17 +1238,17 @@
 
       .hero-content {
         flex-direction: column;
-        text-align: center;
-        gap: 1.6rem;
-       margin-top: 7rem; 
-        align-items: center;
-        justify-content: flex-start;
+  text-align: center;
+  gap: 1.6rem;
+  margin-top: 6rem;      /* was 7rem */
+  align-items: center;
+  justify-content: flex-start;
       }
 
       .hero-center {
-        top: 0;
-        transform: translateX(0);
-        order: 1;
+        top: -90px;            /* move face up so hair overlaps text */
+  transform: translateX(0);
+  order: 1;
       }
 
       /* BIG face on mobile, like desktop feeling */
