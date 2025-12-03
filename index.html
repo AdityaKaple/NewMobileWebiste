@@ -226,7 +226,7 @@
     }
 
     .hero-face {
-      width: min(720px, 80vw);
+      width: min(820px, 80vw);
       height: auto;
       filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.85));
       position: relative;
@@ -1220,21 +1220,27 @@
         gap: 1.2rem;
       }
 
-      /* hide big background text on phones */
-      .hero-title {
-        display: none;
+      .hero {
+        padding-top: 5.4rem;
+        align-items: flex-start;
       }
 
-      .hero {
-        padding-top: 5.2rem;
-        align-items: flex-start;
+      /* keep HI I'M ADITYA, but fit it nicely */
+      .hero-title {
+        top: 10%;
+        font-size: 12vw;
+        letter-spacing: 0.06em;
+        width: 100%;
+        padding: 0 1rem;
+        text-align: center;
+        white-space: normal;  /* allow wrap if needed */
       }
 
       .hero-content {
         flex-direction: column;
         text-align: center;
         gap: 1.8rem;
-        margin-top: 1.6rem;
+        margin-top: 9.5rem;  /* space below title */
         align-items: center;
         justify-content: flex-start;
       }
@@ -1246,8 +1252,8 @@
       }
 
       .hero-face {
-        width: 68vw;           /* big but not overflowing */
-        max-width: 340px;
+        width: 80vw;           /* big like desktop */
+        max-width: 420px;
       }
 
       .hero-left {
@@ -1255,7 +1261,7 @@
         top: 0;
         border-left: none;
         padding-left: 0;
-        margin-top: 0.2rem;
+        margin-top: 0.4rem;
       }
 
       .hero-label {
