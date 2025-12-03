@@ -220,7 +220,7 @@
       display: flex;
       justify-content: center;
       position: relative;
-      top: -240px;          /* moves face up so hair overlaps text on desktop */
+      top: -240px;          /* moves face up so hair overlaps text */
       transform: translateX(8%);
       perspective: 1200px;  /* for 3D tilt */
     }
@@ -1225,22 +1225,22 @@
         align-items: flex-start;
       }
 
-      /* keep HI I'M ADITYA, but fit it nicely */
+      /* keep HI I'M ADITYA, big and centered */
       .hero-title {
-        top: 10%;
+        top: 9%;
         font-size: 12vw;
         letter-spacing: 0.06em;
         width: 100%;
-        padding: 0 1rem;
+        padding: 0 3vw;
         text-align: center;
-        white-space: normal;  /* allow wrap if needed */
+        white-space: normal;  /* wrap if needed on very small screens */
       }
 
       .hero-content {
         flex-direction: column;
         text-align: center;
-        gap: 1.8rem;
-        margin-top: 9.5rem;  /* space below title */
+        gap: 1.6rem;
+        margin-top: 9rem;
         align-items: center;
         justify-content: flex-start;
       }
@@ -1251,9 +1251,10 @@
         order: 1;
       }
 
+      /* BIG face on mobile, like desktop feeling */
       .hero-face {
-        width: 80vw;           /* big like desktop */
-        max-width: 420px;
+        width: 95vw;
+        max-width: 480px;
       }
 
       .hero-left {
