@@ -1213,9 +1213,11 @@
 /* ---------------------- RESPONSIVE -------------------- */
 /* ----------------------------------------------------- */
 
-@media (max-width: 980px) {
+/* ----------------------------------------------------- */
+/* ---------------------- RESPONSIVE -------------------- */
+/* ----------------------------------------------------- */
 
- @media (max-width: 980px) {
+@media (max-width: 980px) {
 
   /* NAVBAR STACKED */
   nav {
@@ -1228,7 +1230,7 @@
     gap: 1.2rem;
   }
 
-  /* HERO LAYOUT */
+  /* HERO SECTION */
   .hero {
     padding-top: 5.5rem;
     min-height: 100vh;
@@ -1255,30 +1257,29 @@
     align-items: center;
     justify-content: flex-start;
     gap: 1.4rem;
-    margin-top: 2.2rem;   /* keeps everything under the heading nicely */
+    margin-top: 2.2rem;
   }
 
-  /* FACE – big + overlapping heading slightly */
+  /* FACE (Mobile tuned perfect) */
   .hero-center {
     order: 1;
-     top: -90px;        /* hair overlaps HI I'M ADITYA */
+    top: -70px;                      /* adjust face slightly */
     transform: translateX(0);
   }
 
   .hero-face {
-    width: 125vw;         /* big face on mobile */
+    width: 125vw;                    /* big avatar */
     max-width: none;
     margin-top: -10px;
   }
 
-  /* ROLES TEXT (IT DIPLOMA STUDENT etc.) */
+  /* ROLE TEXT — FIXED GAP HERE */
   .hero-left {
     order: 2;
-    top: 0;
+    margin-top: -130px;              /* pull text UP under the face */
     border-left: none;
     padding-left: 0;
     text-align: center;
-    margin-top: -90px;    /* pulls text UP to reduce the gap under the face */
   }
 
   .hero-label {
@@ -1288,16 +1289,16 @@
   .hero-role {
     font-size: 0.78rem;
     letter-spacing: 0.16em;
+    margin-bottom: 0.3rem;
   }
 
-  /* BUTTONS BLOCK */
+  /* BUTTON BLOCK */
   .hero-right {
     order: 3;
-    top: 0;
     align-items: center;
     text-align: center;
     width: 100%;
-    margin-top: -25px;    /* brings LinkedIn button closer to roles */
+    margin-top: -10px;               /* closes gap perfectly */
   }
 
   .linkedin-btn {
@@ -1316,7 +1317,7 @@
     margin-top: 3rem;
   }
 
-  /* ABOUT, SKILLS, PROJECTS, CONTACT – keep stacked */
+  /* ABOUT, SKILLS, PROJECTS, CONTACT */
   .about-inner {
     flex-direction: column;
     text-align: center;
@@ -1326,21 +1327,12 @@
     text-align: left;
   }
 
-  .about-ai-badge {
-    right: 50%;
-    transform: translateX(90%);
-  }
-
   .skills-layout {
     grid-template-columns: 1fr;
   }
 
   .projects-grid {
     grid-template-columns: 1fr;
-  }
-
-  .projects-sub {
-    max-width: 100%;
   }
 
   .contact-grid {
