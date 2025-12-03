@@ -217,12 +217,12 @@
 
     .hero-center {
       flex: 1;
-  display: flex;
-  justify-content: center;
-  position: relative;
-  top: -240px;          /* moves face up so hair overlaps text like desktop */
-  transform: translateX(8%);
-  perspective: 1200px;  /* for 3D tilt */
+      display: flex;
+      justify-content: center;
+      position: relative;
+      top: -240px;          /* moves face up so hair overlaps text like desktop */
+      transform: translateX(8%);
+      perspective: 1200px;  /* for 3D tilt */
     }
 
     .hero-face {
@@ -1238,32 +1238,32 @@
 
       .hero-content {
         flex-direction: column;
-  text-align: center;
-  gap: 1.6rem;
-  margin-top: 6rem;      /* was 7rem */
-  align-items: center;
-  justify-content: flex-start;
+        text-align: center;
+        gap: 0.8rem;          /* less vertical gap */
+        margin-top: 5.2rem;   /* slightly closer to top */
+        align-items: center;
+        justify-content: flex-start;
       }
 
       .hero-center {
-        top: -90px;            /* move face up so hair overlaps text */
-  transform: translateX(0);
-  order: 1;
+        top: -90px;           /* move face up so hair overlaps text */
+        transform: translateX(0);
+        order: 1;
       }
 
       /* BIG face on mobile, like desktop feeling */
       .hero-face {
-        
-  width: 115vw;   /* 105–115vw looks good on phones */
-  max-width: none;
+        width: 115vw;         /* big face */
+        max-width: none;
       }
 
+      /* roles text */
       .hero-left {
         order: 2;
         top: 0;
         border-left: none;
         padding-left: 0;
-        margin-top: 0.4rem;
+        margin-top: -1.8rem;  /* pull roles up under the face */
       }
 
       .hero-label {
@@ -1275,12 +1275,14 @@
         letter-spacing: 0.16em;
       }
 
+      /* buttons block */
       .hero-right {
         order: 3;
         top: 0;
         align-items: center;
         text-align: center;
         width: 100%;
+        margin-top: -1.2rem;  /* pull buttons closer to roles */
       }
 
       .linkedin-btn {
