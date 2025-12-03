@@ -226,7 +226,7 @@
     }
 
     .hero-face {
-      width: min(900px, 90vw);   /* bigger on desktop */
+      width: min(950px, 95vw);   /* bigger on desktop */
   height: auto;
   filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.85));
   position: relative;
@@ -1259,13 +1259,13 @@
   /* FACE – big + overlapping */
   .hero-center {
     order: 1;
-    top: -40px;          /* hair slightly overlaps text */
+    top: -140px;         /* move face UP more — hair overlaps text properly */
     transform: translateX(0);
   }
 
   .hero-face {
-    width: 90vw;         /* big but not crazy */
-    max-width: 480px;
+   width: 115vw;
+  max-width: none;
     margin-top: -20px;
   }
 
