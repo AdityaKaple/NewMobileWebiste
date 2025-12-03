@@ -1209,130 +1209,150 @@
     /* ---------------------- RESPONSIVE -------------------- */
     /* ----------------------------------------------------- */
 
-    @media (max-width: 980px) {
-      nav {
-        flex-direction: column;
-        gap: 0.6rem;
-        padding: 0.9rem 1.4rem;
-      }
+/* ----------------------------------------------------- */
+/* ---------------------- RESPONSIVE -------------------- */
+/* ----------------------------------------------------- */
 
-      .nav-links {
-        gap: 1.2rem;
-      }
+@media (max-width: 980px) {
 
-      .hero {
-        padding-top: 5.4rem;
-        align-items: flex-start;
-      }
+  /* NAVBAR STACKED */
+  nav {
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 0.9rem 1.4rem;
+  }
 
-      /* keep HI I'M ADITYA, big and centered */
-      .hero-title {
-        top: 18%;
-        font-size: 12vw;
-        letter-spacing: 0.06em;
-        width: 100%;
-        padding: 0 3vw;
-        text-align: center;
-        white-space: normal;  /* wrap if needed on very small screens */
-      }
+  .nav-links {
+    gap: 1.2rem;
+  }
 
-      .hero-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.8rem;          /* less vertical gap */
-        margin-top: 5.2rem;   /* slightly closer to top */
-        align-items: center;
-        justify-content: flex-start;
-      }
+  /* HERO LAYOUT */
+  .hero {
+    padding-top: 5.5rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 
-      .hero-center {
-        top: -90px;           /* move face up so hair overlaps text */
-        transform: translateX(0);
-        order: 1;
-      }
+  /* HI, I'M ADITYA text */
+  .hero-title {
+    top: 14%;
+    font-size: 12vw;
+    letter-spacing: 0.06em;
+    width: 100%;
+    padding: 0 3vw;
+    text-align: center;
+    white-space: normal;
+  }
 
-      /* BIG face on mobile, like desktop feeling */
-      .hero-face {
-        width: 115vw;         /* big face */
-        max-width: none;
-      }
+  /* MAIN FIX – remove big gap */
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    margin-top: 2rem !important;
+  }
 
-      /* roles text */
-      .hero-left {
-        order: 2;
-        top: 0;
-        border-left: none;
-        padding-left: 0;
-        margin-top: -1.8rem;  /* pull roles up under the face */
-      }
+  /* FACE – big + overlapping */
+  .hero-center {
+    order: 1;
+    top: -40px;          /* hair slightly overlaps text */
+    transform: translateX(0);
+  }
 
-      .hero-label {
-        font-size: 0.72rem;
-      }
+  .hero-face {
+    width: 90vw;         /* big but not crazy */
+    max-width: 480px;
+    margin-top: -20px;
+  }
 
-      .hero-role {
-        font-size: 0.78rem;
-        letter-spacing: 0.16em;
-      }
+  /* ROLES TEXT */
+  .hero-left {
+    order: 2;
+    top: 0;
+    border-left: none;
+    padding-left: 0;
+    text-align: center;
+    margin-top: -10px;
+  }
 
-      /* buttons block */
-      .hero-right {
-        order: 3;
-        top: 0;
-        align-items: center;
-        text-align: center;
-        width: 100%;
-        margin-top: -1.2rem;  /* pull buttons closer to roles */
-      }
+  .hero-label {
+    font-size: 0.72rem;
+  }
 
-      .linkedin-btn {
-        width: min(320px, 100%);
-      }
+  .hero-role {
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+  }
 
-      .contact-block {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.6rem;
-      }
+  /* BUTTONS */
+  .hero-right {
+    order: 3;
+    top: 0;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-top: -20px;
+  }
 
-      .about-inner {
-        flex-direction: column;
-        text-align: center;
-      }
+  .linkedin-btn {
+    width: 80%;
+    max-width: 320px;
+  }
 
-      .about-card {
-        text-align: left;
-      }
+  .contact-block {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+  }
 
-      .about-ai-badge {
-        right: 50%;
-        transform: translateX(90%);
-      }
+  /* GAP BEFORE ABOUT SECTION */
+  #about {
+    margin-top: 3rem;
+  }
 
-      .skills-layout {
-        grid-template-columns: 1fr;
-      }
+  /* ABOUT, SKILLS, PROJECTS, CONTACT – keep stacked */
+  .about-inner {
+    flex-direction: column;
+    text-align: center;
+  }
 
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
+  .about-card {
+    text-align: left;
+  }
 
-      .projects-sub {
-        max-width: 100%;
-      }
+  .about-ai-badge {
+    right: 50%;
+    transform: translateX(90%);
+  }
 
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
+  .skills-layout {
+    grid-template-columns: 1fr;
+  }
 
-      .contact-inner {
-        padding: 2.2rem 1.8rem 2.2rem;
-      }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 
-      .project-card {
-        padding: 1.4rem 1.4rem 1.3rem;
-      }
-    }
+  .projects-sub {
+    max-width: 100%;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-inner {
+    padding: 2.2rem 1.8rem 2.2rem;
+  }
+
+  .project-card {
+    padding: 1.4rem 1.4rem 1.3rem;
+  }
+}
   </style>
 </head>
 
