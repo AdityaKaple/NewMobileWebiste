@@ -1215,6 +1215,8 @@
 
 @media (max-width: 980px) {
 
+ @media (max-width: 980px) {
+
   /* NAVBAR STACKED */
   nav {
     flex-direction: column;
@@ -1237,46 +1239,46 @@
 
   /* HI, I'M ADITYA text */
   .hero-title {
-  top: 13%;              /* moved a bit DOWN */
-  font-size: 12vw;
-  letter-spacing: 0.06em;
-  width: 100%;
-  padding: 0 3vw;
-  text-align: center;
-  white-space: normal;
+    top: 14%;
+    font-size: 12vw;
+    letter-spacing: 0.06em;
+    width: 100%;
+    padding: 0 3vw;
+    text-align: center;
+    white-space: normal;
   }
 
-  /* MAIN FIX – remove big gap */
+  /* MAIN HERO STACK */
   .hero-content {
     flex-direction: column;
     text-align: center;
     align-items: center;
     justify-content: flex-start;
-    gap: 1.5rem;
-     margin-top: 0.5rem !important; 
+    gap: 1.4rem;
+    margin-top: 2.2rem;   /* keeps everything under the heading nicely */
   }
 
-  /* FACE – big + overlapping */
+  /* FACE – big + overlapping heading slightly */
   .hero-center {
     order: 1;
-  top: -110px;   /* face moves DOWN */
-  transform: translateX(0);
+    top: -110px;          /* hair overlaps HI I'M ADITYA */
+    transform: translateX(0);
   }
 
   .hero-face {
-   width: 130vw;        /* big face but not crazy big */
-  max-width: none;
-  margin-top: -10px;
+    width: 125vw;         /* big face on mobile */
+    max-width: none;
+    margin-top: -10px;
   }
 
-  /* ROLES TEXT */
+  /* ROLES TEXT (IT DIPLOMA STUDENT etc.) */
   .hero-left {
-     order: 2;
+    order: 2;
     top: 0;
     border-left: none;
     padding-left: 0;
     text-align: center;
-    margin-top: -160px;   /* 
+    margin-top: -40px;    /* pulls text UP to reduce the gap under the face */
   }
 
   .hero-label {
@@ -1288,14 +1290,14 @@
     letter-spacing: 0.16em;
   }
 
-  /* BUTTONS */
+  /* BUTTONS BLOCK */
   .hero-right {
     order: 3;
-  top: 0;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  margin-top: -50px;  
+    top: 0;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-top: -25px;    /* brings LinkedIn button closer to roles */
   }
 
   .linkedin-btn {
